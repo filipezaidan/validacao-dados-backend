@@ -55,7 +55,7 @@ function validateEmail(email) {
   return errors;
 }
 
-function validatePhone(phone) {
+function validatePhone(ddd, phone, extension) {
   const validDDDs = [
     11, 12, 13, 14, 15, 16, 17, 18, 19, 21, 22, 24, 27, 28, 31, 32, 33, 34, 35,
     37, 38, 41, 42, 43, 44, 45, 46, 47, 48, 49, 51, 53, 54, 55, 61, 62, 63, 64,
@@ -63,10 +63,26 @@ function validatePhone(phone) {
     89, 91, 92, 93, 94, 95, 96, 97, 98, 99,
   ];
   let errors = [];
-  let ddd = parseInt(phone.substring(0, 2));
-  if (!validDDDs.includes(ddd)) {
+  let dddInt = parseInt(ddd);
+  let phoneInt = parseInt(phone);
+  let extensionInt = parseInt(extension);
+
+  if (!validDDDs.includes(dddInt)) {
     errors.push({ msg: "DDD inválido." });
   }
+
+  if (!(phone.length === 8 || phone.length === 9)) {
+    errors.push({ msg: "Número de telefone deve ter 8 ou 9 dígitos." });
+  }
+
+  if (
+    extension &&
+    extension.length > 0 &&
+    (extensionInt < 100 || extensionInt > 9999)
+  ) {
+    errors.push({ msg: "Ramal deve ter entre 3 e 4 dígitos." });
+  }
+
   return errors;
 }
 
@@ -80,12 +96,12 @@ function validateActivities(activities) {
 
 function validateFormInput(data) {
   let errors = [];
-  console.log({ data });
+
   errors = errors.concat(
     validateRequiredFields(data),
     validateDate(data.day, data.month, data.year),
     validateEmail(data.email),
-    validatePhone(data.phone),
+    validatePhone(data.ddd, data.phone, data.extension),
     validateActivities(data.activities)
   );
   return errors;
