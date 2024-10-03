@@ -29,6 +29,9 @@ Este projeto é uma atividade da disciplina de Desenvolvimento Web 2 do curso de
    ```bash
    npm start
    ```
+3. **Acesso ao Formulário**:
+   - Abra o navegador e acesse:
+     http://localhost:3000/
 
 ## Contribuições
 
@@ -46,4 +49,8 @@ Distribuído sob a licença MIT. Veja `LICENSE` para mais informações.
 
 ## Contato
 
-Projeto Link: [https://github.com/filipezaidan/validacao-dados-backend](https://github.com/filipezaidan/validacao-dados-backend)
+| <img src="https://avatars.githubusercontent.com/u/41112779?v=4" width="100px;" alt="Foto de Filipe Zaidan" /> |
+| :-----------------------------------------------------------------------------------------------------------: |
+|                                               **Filipe Zaidan**                                               |
+
+Para mais informações, entre em contato através do [LinkedIn](https://www.linkedin.com/in/filipezaidan/).
