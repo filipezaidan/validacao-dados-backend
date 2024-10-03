@@ -1,18 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Escola Virtual - Formulário de Pré-Matrícula</title>
     <link rel="stylesheet" href="/stylesheets/style.css">
-    
+
 </head>
+
 <body>
     <div class="container">
         <h1>Escola Virtual</h1>
         <h2>Formulário de Pré-Matrícula</h2>
 
-        <form action="/form" method="post"> 
+        <form action="/form" method="post">
             <fieldset>
                 <legend>Dados Pessoais:</legend>
                 <label for="studentName">Nome do Aluno:</label>
@@ -26,7 +28,7 @@
                     <span class="date-separator">/</span>
                     <input type="number" id="year" name="year" placeholder="aaaa" class="date-input">
                 </div>
-              
+
 
                 <label for="motherName">Nome da Mãe:</label>
                 <input type="text" id="motherName" name="motherName">
@@ -37,8 +39,8 @@
                 <label for="phone">Telefone:</label>
                 <div class="phone-inputs">
                     <input type="text" placeholder="DDD" id="phone" name="phone">
-                    <input type="text" placeholder="Tel" >
-                    <input type="text" placeholder="Ramal" >
+                    <input type="text" placeholder="Tel">
+                    <input type="text" placeholder="Ramal">
                 </div>
                 <div class="clear"></div>
 
@@ -49,7 +51,6 @@
             <fieldset>
                 <legend>Informações de Matrícula:</legend>
 
-                
                 <label for="grade">Série:</label>
                 <select id="grade" name="grade">
                     <option value="pre-escolar">pré-escolar</option>
@@ -67,20 +68,37 @@
                     <option value="ensino-medio-3">Ensino Médio - 3º ano</option>
                 </select>
 
-                <label>Turno:</label>
-                <div class="radio-group">
-                    <label for="morning" >Manhã</label>
-                    <input type="radio" id="morning" name="shift" value="morning">
-                    <label for="afternoon" >Tarde</label>
-                    <input type="radio" id="afternoon" name="shift" value="afternoon">
+                <div>
+
+                    <label>Turno:</label>
+                    <div class="radio-group">
+                        <input type="radio" id="morning" name="shift" value="morning">
+                        <label for="morning">Manhã</label>
+                        <input type="radio" id="afternoon" name="shift" value="afternoon">
+                        <label for="afternoon">Tarde</label>
+
+                    </div>
+
                 </div>
-            
+
+
+
                 <label>Atividades Extracurriculares:</label>
-                <input type="checkbox" id="computing" name="activities" value="computing">
-                <label for="computing" class="half-input">Informática</label>
-                <input type="checkbox" id="music" name="activities" value="music">
-                <label for="music" class="half-input">Música</label>
-                
+                <div class="checkbox-group">
+                    <input type="checkbox" id="computing" name="activities" value="computing">
+                    <label for="computing" class="half-input">Informática</label>
+                    <input type="checkbox" id="music" name="activities" value="music">
+                    <label for="music" class="half-input">Música</label>
+                    <input type="checkbox" id="ballet" name="activities" value="ballet">
+                    <label for="ballet" class="half-input">Ballet</label>
+                    <input type="checkbox" id="painting" name="activities" value="painting">
+                    <label for="painting" class="half-input">Pintura</label>
+                    <input type="checkbox" id="judo" name="activities" value="judo">
+                    <label for="judo" class="half-input">Judô</label>
+                    <input type="checkbox" id="soccer" name="activities" value="soccer">
+                    <label for="soccer" class="half-input">Futebol</label>
+                </div>
+
                 <div class="clear"></div>
             </fieldset>
 
@@ -91,4 +109,5 @@
         </form>
     </div>
 </body>
+
 </html>
