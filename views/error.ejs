@@ -1,3 +1,49 @@
-<h1><%= message %></h1>
-<h2><%= error.status %></h2>
-<pre><%= error.stack %></pre>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background-color: #f9f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 90vh;
+        }
+        .error-message {
+            text-align: center;
+            background-color: #f2dede;
+            color: #a94442;
+            border: 1px solid #ebccd1;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        pre {
+            background-color: #f9f9f9;
+            border: 1px solid #ccc;
+            padding: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="error-message">
+        <h1><%= error.message %></h1>
+        <h2>Status: <%= error.status %></h2>
+        <% if (error.fields && error.fields.length > 0) { %>
+            <h3>Campos inválidos:</h3>
+            <ul>
+                <% error.fields.forEach(function(field) { %>
+                    <li><%= field %></li>
+                <% }); %>
+            </ul>
+        <% } %>
+        <a href="/">Voltar para a página inicial</a>
+    </div>
+</body>
+</html>
