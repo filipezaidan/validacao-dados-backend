@@ -9,6 +9,7 @@ function validateRequiredFields(data) {
     phone,
     email,
     grade,
+    shift,
   } = data;
   let errors = [];
   if (
@@ -20,7 +21,8 @@ function validateRequiredFields(data) {
     !fatherName ||
     !phone ||
     !email ||
-    !grade
+    !grade ||
+    !shift
   ) {
     errors.push({ msg: "Por favor, preencha todos os campos obrigatórios." });
   }
@@ -78,6 +80,7 @@ function validateActivities(activities) {
 
 function validateFormInput(data) {
   let errors = [];
+  console.log({ data });
   errors = errors.concat(
     validateRequiredFields(data),
     validateDate(data.day, data.month, data.year),
